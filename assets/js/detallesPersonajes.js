@@ -71,19 +71,14 @@ export default class DetallesPersonajes extends Personajes {
                 </div>  
         </div>`);
     }
-    infoGeneral(image, resultado) {
-        resultado.insertAdjacentHTML('beforeend',  // inyecta ficha con información general de personajes en html (id, species)
-        // la imagen tiene atributos data-toggle y data-target para ejecutar el modal
-        `<div class="fichaPersonaje Personaje${this.id} col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                <div class="imagenPersonaje">
-                    <img src="${image}" class="card-img-top" alt="${this.name}" data-toggle="modal" data-target="#personaje${this.id}"></img>  
-                </div>
-                <div class="datosPersonaje">  
-                    <ul>
-                        <li><span>${this.id}</span></li>
-                        <li><span>${this.species}</span></li>
-                    </ul>
-                </div>
+    infoGeneral() {
+        let datosGenerales = document.querySelector(`.Personaje${this.id}`); // captura clase en html del personaje para inyectar
+        datosGenerales.insertAdjacentHTML('beforeend',  // inyecta ficha con información general de personajes en html (id, species)
+        `<div class="datosPersonaje"> 
+            <ul>
+                <li><span>${this.id}</span></li>
+                <li><span>${this.species}</span></li>
+            </ul>
         </div>`);
     }
 }
