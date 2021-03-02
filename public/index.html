@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="Jennyfer Vicencio Arce">
+    <meta name="description" content="Comenta sobre tus personajes favoritos de la serie Rick & Morty">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Rick & Morty</title>
+    <style>
+      .go-top {
+        display: none;
+        padding: 20px;
+        width: 90px;
+        height: 90px;
+        font-size: 20px;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <span class="go-top"><img src="/assets/gotop.svg" alt="go-top"></span>
+    <!-- built files will be auto injected -->
+    <script>
+      
+      $('.go-top').click(() =>{
+        $('body, html').animate({
+          scrollTop: '0px'
+        }, 300);
+      });
+    
+      $(window).scroll(() => {
+        if( $(this).scrollTop() > 0 ){
+          $('.go-top').slideDown(300);
+        } else {
+          $('.go-top').slideUp(300);
+        }
+      });
+    </script>
+  </body>
+</html>
